@@ -6,11 +6,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ElasticSearchProj" />
+        <module name="CustomerService" />
+        <module name="Microservices" />
+        <module name="OrderService" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="ElasticSearchProj" target="1.5" />
+      <module name="CustomerService" target="1.8" />
+      <module name="Microservices" target="1.5" />
+      <module name="OrderService" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
