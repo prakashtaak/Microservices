@@ -1,6 +1,6 @@
 package com.store.cutomer.ws;
 
-import com.store.customer.entitties.Customer;
+import com.store.customer.entities.Customer;
 import com.store.customer.repository.CustomerRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -8,7 +8,6 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import javax.xml.ws.Response;
 import java.util.Collection;
 
 @RefreshScope

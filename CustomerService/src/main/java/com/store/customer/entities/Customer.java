@@ -1,20 +1,18 @@
-package com.store.customer.entitties;
+package com.store.customer.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.validator.constraints.Email;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.Size;
 
 @Entity
 public class Customer {
 
     @Id
-    @GeneratedValue
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long customerId;
 
     @Column(name = "name")
     @Size(min = 1, max = 30, message = "error.name")
@@ -26,22 +24,20 @@ public class Customer {
     private String emailAddress;
 
 
-   /* @Embedded
-    private Address address;
-
     @Embedded
-    private Address billingAddress;*/
+    @JsonIgnoreProperties
+    private Address billingAddress;
 
 
     public Customer() {
     }
 
-    public Long getId() {
-        return id;
+    public Long getCustomerId() {
+        return customerId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setCustomerId(Long customerId) {
+        this.customerId = customerId;
     }
 
     public String getName() {
@@ -59,14 +55,6 @@ public class Customer {
     public void setEmailAddress(String emailAddress) {
         this.emailAddress = emailAddress;
     }
-/**
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
 
     public Address getBillingAddress() {
         return billingAddress;
@@ -74,5 +62,5 @@ public class Customer {
 
     public void setBillingAddress(Address billingAddress) {
         this.billingAddress = billingAddress;
-    }*/
+    }
 }

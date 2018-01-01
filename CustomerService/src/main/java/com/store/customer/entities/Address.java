@@ -1,8 +1,7 @@
-package com.store.customer.entitties;
+package com.store.customer.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
-import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;
 
 
@@ -23,13 +22,26 @@ public class Address {
 
     @Column
     @NotNull(message = "error.state")
-    private String State;
+    private String state;
 
     @Column
     @NotNull(message = "error.country")
-    private String country;
+    private String countryName;
+
+    @Column
+    @NotNull(message="error.phoneNumber")
+    private Long phoneNumber;
+
 
     public Address() {
+    }
+
+    public Long getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(Long phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public String getAddressString() {
@@ -57,18 +69,18 @@ public class Address {
     }
 
     public String getState() {
-        return State;
+        return state;
     }
 
     public void setState(String state) {
-        State = state;
+        this.state = state;
     }
 
-    public String getCountry() {
-        return country;
+    public String getCountryName() {
+        return countryName;
     }
 
-    public void setCountry(String country) {
-        country = country;
+    public void setCountryName(String countryName) {
+        this.countryName = countryName;
     }
 }
