@@ -35,6 +35,10 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<!--
+		API Gateway for micro services
+		-->
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -51,6 +55,12 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+
+
+
+			<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-commons -->
+
+
 		</dependencies>
 	</dependencyManagement>
 
